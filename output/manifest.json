@@ -1,0 +1,31 @@
+{
+  "name": "Blank new tab page",
+  "version": "0.2",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "dist/index.html"
+  },
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  /*"web_accessible_resources": ["script.js", "http://clients1.google.com/complete/search"],*/
+  "manifest_version": 2,
+  "permissions": [
+    "http://*/",
+    "https://*/",
+    "https://sp0.baidu.com/",
+    "http://clients1.google.com/",
+    "https://clients1.google.com/"
+  ],
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://sp0.baidu.com/; object-src 'self'",
+
+  "content_scripts":[
+    {
+      "matches":["https://sp0.baidu.com/"],
+      "js":[
+       "dist/main.js","dist/vendors.js"
+      ]
+    }
+  ]
+}

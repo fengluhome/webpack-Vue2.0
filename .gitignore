@@ -1,0 +1,5 @@
+node_modules/
+.idea/
+vwd.webinfo
+.project
+.DS_Store
